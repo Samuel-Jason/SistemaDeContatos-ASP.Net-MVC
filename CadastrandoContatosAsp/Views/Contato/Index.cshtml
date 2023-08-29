@@ -1,0 +1,46 @@
+﻿@model List<ContatoModel>
+
+@{
+    ViewData["Title"] = "Listagem de Contatos";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Listagem de Contatos</h1>
+
+    <div class="align-content-sm-start" >
+        <a class="btn btn-primary" role="button" asp-controller="Contato" asp-action="Criar">Adicionar Novo Contato</a>
+    </div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Celular</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(Model != null && Model.Any())
+            {
+                foreach(ContatoModel Contato in Model)
+                {
+                    <tr>
+                        <th scope="row">@Contato.Id</th>
+                        <td>@Contato.Nome</td>
+                        <td>@Contato.Email</td>
+                        <td>@Contato.Celular</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-primary" asp-route-id="@Contato.Id" asp-controller="Contato" asp-action="Editar">Editar</a>
+                                <a role="button" class="btn btn-danger" asp-route-id="@Contato.Id" asp-controller="Contato" asp-action="ApagarConfirmacao">Apagar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
