@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uKyeH6D25HOjyFpmb1v/fsWXVUP1T0Cle4C1Z/8J0aokxF4T8Y4ovN9SeOgUGuR0ca/W3i1MkDU1yvnIe6iTsw==",
+  "dgSpecHash": "snZCFmmH30WHrNusam0iwivvGcjtJUymLXCXKpYm8sFeSfJYn5rJOB6JpK2AIPfXAA73FM4b2nyf34yJxiNmmw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jason\\source\\repos\\CadastrandoContatosAsp\\CadastrandoContatosAsp\\CadastrandoContatosAsp.csproj",
+  "projectFilePath": "C:\\Users\\Jason\\Desktop\\Sistema de Contatos\\SistemaDeContatos-ASP.Net-MVC\\CadastrandoContatosAsp\\CadastrandoContatosAsp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jason\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Jason\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
