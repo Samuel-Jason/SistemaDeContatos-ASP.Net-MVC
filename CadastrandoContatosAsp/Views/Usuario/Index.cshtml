@@ -52,6 +52,7 @@
                         <td>@Usuario.Nome</td>
                         <td>@Usuario.Login</td>
                         <td>@Usuario.Email</td>
+                        <th>@(Usuario.Perfil == CadastrandoContatosAsp.Enums.PerfilEnum.Admin ? "Administrador" : "Padrão")</th>
                         <td>@Usuario.DataCadastro</td>
                         <td>
                             <div class="btn-group" role="group">

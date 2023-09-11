@@ -58,21 +58,29 @@ namespace CadastrandoContatosAsp.Controllers
             }
             catch (Exception erro)
             {
-                TempData["MensagemErro"] = $"Ops, N'ao conseguimos cadastrar seu contato! detalhe do erro : {erro.Message}";
+                TempData["MensagemErro"] = $"Ops, Não conseguimos cadastrar seu contato! detalhe do erro : {erro.Message}";
                 return RedirectToAction("Index");
 
             }
         }
 
-            [HttpPost]
-             public IActionResult Alterar(ContatoModel contato)
-             {
+        [HttpPost]
+        public IActionResult Editar(ContatoModel contato)
+        {
+            try
+            {
                 if (ModelState.IsValid)
                 {
                     _contatoRepositorio.Atualizar(contato);
                     return RedirectToAction("Index");
                 }
-                return View("Editar", contato);
-             }
+                return View(contato);
+            }
+            catch (Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, detalhe do erro : {erro.Message}";
+                return RedirectToAction("Index");
+            }
+        }
     }
 }

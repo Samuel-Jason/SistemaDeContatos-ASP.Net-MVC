@@ -63,11 +63,6 @@ namespace CadastrandoContatosAsp.Repositorio
             return true;
         }
 
-        UsuarioModel IUsuarioRepositorio.ListaPorId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         List<UsuarioModel> IUsuarioRepositorio.BuscarTodos()
         {
             return _bancoContext.Usuarios.ToList();
