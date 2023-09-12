@@ -172,3 +172,4 @@ C:\Users\Jason\Desktop\Sistema de Contatos\SistemaDeContatos-ASP.Net-MVC\Cadastr
 C:\Users\Jason\Desktop\Sistema de Contatos\SistemaDeContatos-ASP.Net-MVC\CadastrandoContatosAsp\obj\Debug\net6.0\CadastrandoContatosAsp.pdb
 C:\Users\Jason\Desktop\Sistema de Contatos\SistemaDeContatos-ASP.Net-MVC\CadastrandoContatosAsp\obj\Debug\net6.0\CadastrandoContatosAsp.genruntimeconfig.cache
 C:\Users\Jason\Desktop\Sistema de Contatos\SistemaDeContatos-ASP.Net-MVC\CadastrandoContatosAsp\obj\Debug\net6.0\ref\CadastrandoContatosAsp.dll
+C:\Users\Jason\Desktop\Sistema de Contatos\SistemaDeContatos-ASP.Net-MVC\CadastrandoContatosAsp\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutDeslogado.cshtml.rz.scp.css

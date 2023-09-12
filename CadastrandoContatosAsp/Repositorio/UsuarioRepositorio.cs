@@ -41,6 +41,13 @@ namespace CadastrandoContatosAsp.Repositorio
             return usuarioDB;
         }
 
+
+        public UsuarioModel BuscarPorLogin(string login)
+        {
+            return _bancoContext.Usuarios.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper());
+        }
+
+
         public UsuarioModel ListaPorId(int id)
         {
             return _bancoContext.Usuarios.FirstOrDefault(p => p.Id == id);
