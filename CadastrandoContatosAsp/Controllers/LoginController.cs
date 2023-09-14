@@ -25,7 +25,8 @@ namespace CadastrandoContatosAsp.Controllers
                     
         public IActionResult Sair()
         {
-            _sessao.RemoverSessaoUsuario();
+            UsuarioModel usuario = new UsuarioModel();
+            _sessao.RemoverSessaoUsuario(usuario);
             return RedirectToAction("Index", "Login");
 
         }
