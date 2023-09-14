@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "snZCFmmH30WHrNusam0iwivvGcjtJUymLXCXKpYm8sFeSfJYn5rJOB6JpK2AIPfXAA73FM4b2nyf34yJxiNmmw==",
+  "dgSpecHash": "YQTg+gCScoyjQzvDV+dHJTlGxYlsL8ugSpB1RFiiaVlkyauGpK/TVUpfLswJnp3w/Lc/UTBUIWuolVCuRFWP2g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jason\\Desktop\\Sistema de Contatos\\SistemaDeContatos-ASP.Net-MVC\\CadastrandoContatosAsp\\CadastrandoContatosAsp.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,7 @@
     "C:\\Users\\Jason\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Jason\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Jason\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Jason\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Jason\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Jason\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\Jason\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
