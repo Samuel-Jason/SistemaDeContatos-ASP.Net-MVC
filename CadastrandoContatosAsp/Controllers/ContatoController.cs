@@ -1,9 +1,11 @@
-﻿using CadastrandoContatosAsp.Models;
+﻿using CadastrandoContatosAsp.Filters;
+using CadastrandoContatosAsp.Models;
 using CadastrandoContatosAsp.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CadastrandoContatosAsp.Controllers
 {
+    [PaginaParaUsuarioLogado]
     public class ContatoController : Controller
     {
         private readonly IContatoRepositorio _contatoRepositorio;
