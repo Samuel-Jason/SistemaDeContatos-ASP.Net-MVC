@@ -1,4 +1,5 @@
 ﻿using CadastrandoContatosAsp.Enums;
+using CadastrandoContatosAsp.Helper;
 using System.ComponentModel.DataAnnotations;
 
 namespace CadastrandoContatosAsp.Models
@@ -21,7 +22,11 @@ namespace CadastrandoContatosAsp.Models
         public DateTime? DataAtualizacao { get; set; }
         public bool SenhaValida(string senha)
         {
-            return Senha == senha;
+            return Senha == senha.GerarHash();
+        }
+        public void SetSenhaHash()
+        {
+            Senha = Senha.GerarHash();
         }
 
     }
