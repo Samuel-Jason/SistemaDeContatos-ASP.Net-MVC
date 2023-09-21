@@ -19,10 +19,10 @@ namespace CadastrandoContatosAsp.Controllers
         public IActionResult Index()
         {
             //SE O USUARIO ESTIVER LOGADO REDIRECIONAR PARA A HOME 
-            if(_sessao.BuscarSessaoDoUsuario() != null) return RedirectToAction("Index", "Home");
+            if (_sessao.BuscarSessaoDoUsuario() != null) return RedirectToAction("Index", "Home");
             return View();
         }
-                    
+
         public IActionResult RedefinirSenha()
         {
             return View();
@@ -35,7 +35,7 @@ namespace CadastrandoContatosAsp.Controllers
             return RedirectToAction("Index", "Login");
 
         }
-        
+
         [HttpPost]
 
         public IActionResult Entrar(LoginModel loginModel)
@@ -53,9 +53,9 @@ namespace CadastrandoContatosAsp.Controllers
                             _sessao.CriarSessaoUsuario(usuario);
                             return RedirectToAction("Index", "Home");
                         }
-                            TempData["MensagemErro"] = $"Usuario ou senha invalida!";
+                        TempData["MensagemErro"] = $"Usuario ou senha invalida!";
                     }
-                            TempData["MensagemErro"] = $"Usuario ou senha invalida!";
+                    TempData["MensagemErro"] = $"Usuario ou senha invalida!";
                 }
 
                 return View("Index");
@@ -64,6 +64,36 @@ namespace CadastrandoContatosAsp.Controllers
             catch (Exception erro)
             {
                 TempData["MensagemErro"] = $"Ops, Não conseguimos Logar! detalhe do erro : {erro.Message}";
+                return RedirectToAction("Index");
+            }
+        }
+     
+        [HttpPost]
+        public IActionResult EnviarLinkParaRedefinirSenha(RedefinirSenhaModel redefinirSenhaModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    UsuarioModel usuario = _usuarioRepositorio.BuscarPorEmailELogin(redefinirSenhaModel.Email, redefinirSenhaModel.Login);
+
+                    if (usuario != null)
+                    {
+                        string NovaSenha = usuario.GerarNovaSenha();
+
+                        TempData["MensagemSucesso"] = $"Enviamos para seu email cadastrado uma nova senha.";
+                        return RedirectToAction("Index", "Login");
+                    }
+
+                    TempData["MensagemErro"] = $"Não conseguimos Redefinir sua senha, Verifique os dados novamente.";
+                }
+
+                return View("Index");
+
+            }
+            catch (Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, Não conseguimos Redefinir sua senha, Tente novamente! detalhe do erro : {erro.Message}";
                 return RedirectToAction("Index");
             }
         }

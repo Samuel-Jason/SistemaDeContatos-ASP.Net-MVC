@@ -76,16 +76,9 @@ namespace CadastrandoContatosAsp.Repositorio
             return _bancoContext.Usuarios.ToList();
         }
 
-        //public UsuarioModel Adicionar(UsuarioModel usuario)
-        //{
-        //    _bancoContext.Usuarios.Add(usuario);
-        //    _bancoContext.SaveChanges();
-        //    return usuario;
-        //}
-
-        // public UsuarioModel Atualizar(UsuarioModel usuario)
-        //   {
-        //    throw new NotImplementedException();
-        // }
+        public UsuarioModel BuscarPorEmailELogin(string email, string login)
+        {
+            return _bancoContext.Usuarios.FirstOrDefault(x => x.Email.ToUpper() == email.ToUpper() && x.Login.ToUpper() == login.ToUpper());
+        }
     }
 }
