@@ -23,6 +23,11 @@ namespace CadastrandoContatosAsp.Controllers
             return View();
         }
                     
+        public IActionResult RedefinirSenha()
+        {
+            return View();
+        }
+
         public IActionResult Sair()
         {
             UsuarioModel usuario = new UsuarioModel();
