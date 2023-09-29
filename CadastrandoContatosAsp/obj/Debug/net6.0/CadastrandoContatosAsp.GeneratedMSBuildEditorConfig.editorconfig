@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Jason\Desktop\Sistema de Contatos\SistemaDeContatos-ASP.Net-MVC\CadastrandoContatosAsp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Jason/Desktop/Sistema de Contatos/SistemaDeContatos-ASP.Net-MVC/CadastrandoContatosAsp/Views/AlterarSenha/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0ZXJhclNlbmhhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jason/Desktop/Sistema de Contatos/SistemaDeContatos-ASP.Net-MVC/CadastrandoContatosAsp/Views/Contato/ApagarConfirmacao.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xBcGFnYXJDb25maXJtYWNhby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

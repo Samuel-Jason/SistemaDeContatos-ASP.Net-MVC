@@ -9,6 +9,7 @@ namespace CadastrandoContatosAsp.Controllers
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
         private readonly ISessao _sessao;
+        private readonly IEmail _email;
 
         public LoginController(IUsuarioRepositorio usuarioRepositorio, ISessao sessao)
         {
@@ -67,7 +68,7 @@ namespace CadastrandoContatosAsp.Controllers
                 return RedirectToAction("Index");
             }
         }
-     
+
         [HttpPost]
         public IActionResult EnviarLinkParaRedefinirSenha(RedefinirSenhaModel redefinirSenhaModel)
         {
@@ -80,16 +81,25 @@ namespace CadastrandoContatosAsp.Controllers
                     if (usuario != null)
                     {
                         string NovaSenha = usuario.GerarNovaSenha();
+                        string mensagem = $"Sua nova senha é : {NovaSenha}";
+                        bool emailEnviado = _email.Enviar(usuario.Email, "Sistema de contatos - Nova Senha", mensagem);
 
-                        TempData["MensagemSucesso"] = $"Enviamos para seu email cadastrado uma nova senha.";
-                        return RedirectToAction("Index", "Login");
+                        if (emailEnviado)
+                        {
+                            _usuarioRepositorio.Atualizar(usuario);
+                            TempData["MensagemSucesso"] = $"Enviamos para seu email cadastrado uma nova senha.";
+                        }
+                        else
+                        {
+                            TempData["MensagemErro"] = $"Ops, Tente novamente!";
+                            return RedirectToAction("Index");
+                        }
+
+                        TempData["MensagemErro"] = $"Não conseguimos Redefinir sua senha, Verifique os dados novamente.";
                     }
 
-                    TempData["MensagemErro"] = $"Não conseguimos Redefinir sua senha, Verifique os dados novamente.";
                 }
-
-                return View("Index");
-
+                    return View("Index");
             }
             catch (Exception erro)
             {
