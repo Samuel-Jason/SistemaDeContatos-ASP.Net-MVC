@@ -1,4 +1,6 @@
-﻿using CadastrandoContatosAsp.Models;
+﻿using CadastrandoContatosAsp.Controllers;
+using CadastrandoContatosAsp.Data.Map;
+using CadastrandoContatosAsp.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CadastrandoContatosAsp.Data
@@ -11,5 +13,11 @@ namespace CadastrandoContatosAsp.Data
 
         public DbSet<ContatoModel> Contatos {  get; set; }
         public DbSet<UsuarioModel> Usuarios { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ContatoMap());
+            
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

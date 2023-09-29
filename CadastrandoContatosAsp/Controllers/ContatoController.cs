@@ -1,4 +1,5 @@
 ﻿using CadastrandoContatosAsp.Filters;
+using CadastrandoContatosAsp.Helper;
 using CadastrandoContatosAsp.Models;
 using CadastrandoContatosAsp.Repositorio;
 using Microsoft.AspNetCore.Mvc;
@@ -9,15 +10,17 @@ namespace CadastrandoContatosAsp.Controllers
     public class ContatoController : Controller
     {
         private readonly IContatoRepositorio _contatoRepositorio;
-
-        public ContatoController(IContatoRepositorio contatoRepository)
+        private readonly ISessao _sessao;
+        public ContatoController(IContatoRepositorio contatoRepository, ISessao sessao)
         {
             _contatoRepositorio = contatoRepository;
+            _sessao = sessao;
         }
 
         public IActionResult Index()
         {
-            List<ContatoModel> contatos = _contatoRepositorio.BuscarTodos();
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoDoUsuario();
+            List<ContatoModel> contatos = _contatoRepositorio.BuscarTodos(usuarioLogado.Id);
             return View(contatos);
         }
 
@@ -51,6 +54,9 @@ namespace CadastrandoContatosAsp.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    UsuarioModel usuarioLogado = _sessao.BuscarSessaoDoUsuario();
+                    contato.UsuarioId = usuarioLogado.Id;
+
                     _contatoRepositorio.Adicionar(contato);
                     TempData["MensagemSucesso"] = "Contato cadastrado com sucesso!";
                     return RedirectToAction("Index");
@@ -73,6 +79,9 @@ namespace CadastrandoContatosAsp.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    UsuarioModel usuarioLogado = _sessao.BuscarSessaoDoUsuario();
+                    contato.UsuarioId = usuarioLogado.Id;
+
                     _contatoRepositorio.Atualizar(contato);
                     return RedirectToAction("Index");
                 }
