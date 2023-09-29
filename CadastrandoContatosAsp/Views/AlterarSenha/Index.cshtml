@@ -1,7 +1,7 @@
 ﻿@using CadastrandoContatosAsp.Enums;
 @model AlterarSenhaModel
 @{
-    ViewData["Title"] = "Editar Usuario";
+    ViewData["Title"] = "Alterar Senha do Usuario";
 }
 
 <div class="text-center">
@@ -13,19 +13,19 @@
 <form asp-controller="AlterarSenha" asp-action="Alterar" method="post">
     <div class="form-group">
         <label for="senha">Senha Atual</label>
-        <input type="text" asp-for="SenhaAtual" class="form-control" placeholde="Digite a senha atual do usuario">
+        <input type="text" asp-for="SenhaAtual" class="form-control" placeholder="Digite a senha atual do usuario">
         @Html.ValidationMessageFor(x => x.SenhaAtual)
     </div>
 
     <div class="form-group">
         <label for="novaSenha">Nova Senha</label>
-        <input type="password" asp-for="NovaSenha" class="form-control" placeholde="Digite a nova senha ">
+        <input type="password" asp-for="NovaSenha" class="form-control" placeholder="Digite a nova senha ">
         @Html.ValidationMessageFor(x => x.NovaSenha)
     </div>
 
     <div class="form-group">
         <label for="confirmarSenha">Confirmar Senha</label>
-        <input type="password" asp-for="NovaSenha" class="form-control" placeholde="Digite a confirmacao da nova senha ">
+        <input type="password" asp-for="NovaSenha" class="form-control" placeholder="Digite a confirmacao da nova senha ">
         @Html.ValidationMessageFor(x => x.ConfirmarNovaSenha)
     </div>
     
